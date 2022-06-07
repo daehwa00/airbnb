@@ -5,7 +5,7 @@ import AirbnbLogoIcon from "../public/static/svg/logo/logo.svg";
 import AirbnbLogoTextIcon from "../public/static/svg/logo/logo_text.svg";
 import palette from "../styles/palette";
 import useModal from "../hooks/useModal";
-import SignUpModal from "./auths/SignUpModal";
+import SignUpModal from "./auth/SignUpModal";
 
 const Container = styled.div`
   position: sticky;
