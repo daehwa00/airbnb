@@ -3,7 +3,7 @@ module.exports = {
     browser: true,
     es6: true,
   },
-  extends: ["airbnb"],
+  extends: ["airbnb", "prettier"],
   globals: {
     Atomics: "readonly",
     SharedArrayBuffer: "readonly",
@@ -18,6 +18,8 @@ module.exports = {
   },
   plugins: ["react", "@typescript-eslint"],
   rules: {
+    "@next/next/no-html-link-for-pages": ["error", "packages/my-app/pages/"],
+    "linebreak-style": 0,
     quotes: ["error", "double"], //더블 쿼터 사용
     "@typescript-eslint/quotes": ["error", "double"], //더블 쿼터 사용
     "no-unused-vars": "off", //사용안한 변수 경고 중복
@@ -41,10 +43,18 @@ module.exports = {
     "jsx-a11y/label-has-associated-control": "off", //label htmlFor을 사용하지 않아도 된다.
     "import/prefer-default-export": "off", //export default 를 사용하라.
     "no-param-reassign": "off",
+    "react/function-component-definition": "off",
     "react/jsx-curly-newline": "off", // jsx안에 }를 새로운 라인에 사용할 수 있다.
     "react/jsx-filename-extension": [
       1,
       { extensions: [".js", ".jsx", ".tsx"] }, //jsx사용가능한 확장자 설정
+    ],
+    "react/function-component-definition": [
+      2,
+      {
+        namedComponents: "arrow-function",
+        unnamedComponents: "arrow-function",
+      },
     ],
     "import/extensions": [
       "error",
